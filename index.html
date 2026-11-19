@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A local quote builder with exact decimal calculations, JSON drafts and a print layout."><title>Quote Desk — a clear scope, a clear price</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a class="brand" href="#">Q<span>Quote Desk</span></a><span class="local">LOCAL WORKSPACE</span><button id="sample" class="quiet">Load example</button></header>
+<main>
+  <section class="intro"><div><p class="eyebrow">SMALL PROJECTS, CLEAR AGREEMENTS</p><h1>A clear scope.<br>A clear price.</h1><p>Put the work in writing. Build a quote, save the draft, and send a clean copy.</p></div><div class="intro-note"><span>YOUR FILES, YOUR BROWSER</span><p>No signup.<br>No uploads.<br>Ready when you are.</p></div></section>
+  <div class="workspace">
+    <section class="editor" aria-label="Quote details">
+      <div class="section-head"><h2>The details</h2><span id="item-count">1 line item</span></div>
+      <div class="fields"><label>Your name or studio<input id="seller" maxlength="120" placeholder="Studio name"></label><label>Prepared for<input id="client" maxlength="120" placeholder="Client or company"></label><label class="wide">Project<input id="project" maxlength="160" placeholder="What are we making?"></label><label>Reference<input id="reference" maxlength="50"></label><label>Currency<select id="currency"><option>USD</option><option>EUR</option><option>UAH</option></select></label></div>
+      <div class="section-head item-head"><h2>The work</h2><button id="add" class="quiet">Add item</button></div>
+      <div class="table-wrap"><table class="items"><thead><tr><th>Deliverable</th><th>Qty</th><th>Unit price</th><th>Total</th><th><span class="sr-only">Remove</span></th></tr></thead><tbody id="items"></tbody></table></div>
+      <div class="adjustments"><label>Discount (%)<input id="discount" inputmode="decimal" value="0"></label><label>Tax (%)<input id="tax" inputmode="decimal" value="0"></label></div>
+      <label class="notes">Scope &amp; delivery notes<textarea id="notes" maxlength="2000" rows="3" placeholder="What's included, timing, revisions, and payment terms."></textarea></label>
+      <p class="small">Tax is a percentage you supply. Review the scope and amounts before sharing.</p>
+      <div class="actions"><button id="save">Save draft</button><button id="export" class="secondary">Export JSON</button><button id="import" class="secondary">Import draft</button><input id="import-file" type="file" accept=".json,application/json" hidden></div>
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+    <aside class="preview" aria-label="Quote preview"><div class="preview-top"><span>QUOTE PREVIEW</span><span id="preview-ref"></span></div><div class="preview-body"><p id="preview-seller" class="studio">Your studio</p><h2 id="preview-project">Your next project</h2><p class="for">PREPARED FOR</p><p id="preview-client">Your client</p><div id="preview-items"></div><dl><div><dt>Subtotal</dt><dd id="subtotal"></dd></div><div><dt>Discount</dt><dd id="discount-total"></dd></div><div><dt>Tax</dt><dd id="tax-total"></dd></div><div class="grand"><dt>Estimated total</dt><dd id="grand-total"></dd></div></dl><p id="preview-notes" class="preview-notes"></p><p class="preview-foot">A project estimate · prepared with Quote Desk</p></div><button id="print" class="print">Print / save PDF</button></aside>
+  </div>
+  <footer>Drafts stay in this browser. Export a JSON copy to keep a portable backup. <span>v0.1.0</span></footer>
+</main><script type="module" src="app.js"></script>
+</body></html>
